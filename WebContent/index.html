@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ 
+<script language="JavaScript" src="myAJAXlib.js">
+</script>
+<SCRIPT language="JavaScript" SRC="myJS.js">
+</SCRIPT>
+ <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+</head>
+<body> 
+
+<h1><b>Cottage Service Point</b></h1>
+<p></p>
+<form>
+<div class="form-group">
+<i>Booker name:</i>
+<input type="text" class="form-control" style="width:85%"  name="rClass" id="bookerName" placeholder="Booker name">
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+  <div class="col-6 col-md-4"><i>Required No Of Placess:</i>
+<input type="number" min="0" class="form-control" style="width:50%"  name="rClass" id="noOfPlaces" placeholder="Number of places">
+</div>
+  <div class="col-6 col-md-4"><i>Required No Of Rooms:</i><br>
+<input type="number" min="0" style="width:50%"  name="rClass" id="noOfRooms" placeholder="Number of rooms required"></div>
+  <div class="col-6 col-md-4"><i>Required No Of Days:</i><br>
+<input type="number" min="0" style="width:50%"  name="rClass" id="noOfDays" placeholder="Number of days"></div>
+</div>
+<br>
+<div>
+<i>Max Distance betwwen cottage to lake *(in meters):</i><br>
+<input type="number" min="0" style="width:25%"  name="rClass" id="lakeDistance" placeholder="Maximum distance for the lake in meters"><br><br>
+<i>City:(Cottage is located and a max distance to this city)</i><br>
+<input type="number" style="width:25%"  name="rClass" id="cityDistance" placeholder="Nearest city to the cottage"><br><br>
+
+<p>Starting Day: <input type="text" placeholder="Pick the date" id="datepicker"></p><br><br>
+<input type="button"  class="btn btn-primary"  value="Query" id="sBut" onclick="doQuery();" style="width:100">
+  </div>
+</form>
+<div id="content">
+	
+</div>
+		
+</body>
+</html>

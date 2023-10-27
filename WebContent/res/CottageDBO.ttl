@@ -1,0 +1,88 @@
+@prefix : <http://localhost:8080/cottageService/CottageOntology#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix foo: <http://example.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pto: <http://www.productontology.org/id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://localhost:8080/cottageService/CottageOntology#> .
+
+<http://localhost:8080/cottageService/CottageOntology> rdf:type owl:Ontology .
+
+:Kotikoski rdf:type owl:NamedIndividual ,
+                    pto:Cottage ;
+           :hasCityDistance 38000 ;
+           :hasLakeDistance 50 ;
+           :hasNPlaces "1"^^xsd:int ;
+           :hasNRooms "5"^^xsd:int ;
+           :hasName "Kotikoski" ;
+	   :hasAddress "Helvintie 2, 40700, Jyvaskyla" ;
+           :hasNearestCity "Jyvaskyla" ;
+           :hasNearestLake "Saakoski" ;
+           :hasValidFrom "2023-01-24T00:00:00+01:00"^^xsd:dateTime ;
+ 	   :hasUrl "https://www.lomarengas.fi/en/cottages/jyvaskyla-iltaranta-15516"^^xsd:anyURI ;
+           :hasValidThrough "2024-12-24T00:00:00+01:00"^^xsd:dateTime .
+
+:Kelotahti rdf:type owl:NamedIndividual ,
+                    pto:Cottage ;
+           :hasCityDistance 1000 ;
+           :hasLakeDistance 650 ;
+           :hasNPlaces "4"^^xsd:int ;
+           :hasNRooms "2"^^xsd:int ;
+           :hasName "Kelotahti" ;
+	   :hasAddress "KovilKuja 21, 90700, Lapland" ;
+           :hasNearestCity "Lapland" ;
+           :hasNearestLake "Tuomojarvi" ;
+           :hasValidFrom "2023-01-24T00:00:00+01:00"^^xsd:dateTime ;
+           :hasUrl "https://www.lomarengas.fi/serviceimages/15477/15477_01.jpg"^^xsd:anyURI ;
+           :hasValidThrough "2024-12-24T00:00:00+01:00"^^xsd:dateTime .
+
+:Palttala rdf:type owl:NamedIndividual ,
+                    pto:Cottage ;
+           :hasCityDistance 30000 ;
+           :hasLakeDistance 300 ;
+           :hasNPlaces "4"^^xsd:int ;
+           :hasNRooms "3"^^xsd:int ;
+           :hasName "Palttala" ;
+	   :hasAddress "Semanticlinja 1, 30100, Tampere" ;
+           :hasNearestCity "Tampere" ;
+           :hasNearestLake "Paarlahti" ;
+           :hasValidFrom "2023-01-24T00:00:00+01:00"^^xsd:dateTime ;
+	   :hasUrl "https://www.lomarengas.fi/serviceimages/7883/7883_01.jpg"^^xsd:anyURI ;
+           :hasValidThrough "2024-12-24T00:00:00+01:00"^^xsd:dateTime .
+
+:Lehtola rdf:type owl:NamedIndividual ,
+                    pto:Cottage ;
+           :hasCityDistance 10000 ;
+           :hasLakeDistance 5000 ;
+           :hasNPlaces "4"^^xsd:int ;
+           :hasNRooms "4"^^xsd:int ;
+           :hasName "Lehtola" ;
+	   :hasAddress "Semanticlinja 1, 30100, Tampere" ;
+           :hasNearestCity "Mäntsälä " ;
+           :hasNearestLake "Tuomojarvi" ;
+           :hasValidFrom "2023-01-24T00:00:00+01:00"^^xsd:dateTime ;
+	   :hasUrl "https://www.lomarengas.fi/serviceimages/15404/15404_01.jpg"^^xsd:anyURI ;
+           :hasValidThrough "2024-12-24T00:00:00+01:00"^^xsd:dateTime .
+
+:Hausjarvi rdf:type owl:NamedIndividual ,
+                    pto:Cottage ;
+           :hasCityDistance 90000 ;
+           :hasLakeDistance 20 ;
+           :hasNPlaces "4"^^xsd:int ;
+           :hasNRooms "6"^^xsd:int ;
+           :hasName "Hausjarvi" ;
+	   :hasAddress "Semanticlinja 1, 30100, Tampere" ;
+           :hasNearestCity "Helsinki " ;
+           :hasNearestLake "Puujoki" ;
+           :hasValidFrom "2023-01-24T00:00:00+01:00"^^xsd:dateTime ;
+	   :hasUrl "https://www.lomarengas.fi/serviceimages/7080/7080-1561028264126_1.jpg"^^xsd:anyURI ;
+           :hasValidThrough "2024-12-24T00:00:00+01:00"^^xsd:dateTime .
+
+
+
+
+

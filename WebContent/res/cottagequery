@@ -1,0 +1,44 @@
+    String queryString = "prefix : <http://localhost:8080/cottageService/CottageOntology#> \r\n"
+	       		+ "prefix pto: <http://www.productontology.org/id/> \r\n"
+	       		+ "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \r\n"
+	       		+ "prefix xml: <http://www.w3.org/XML/1998/namespace> \r\n"
+	       		+ "prefix xsd: <http://www.w3.org/2001/XMLSchema#> \r\n"
+	       		+ "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> \r\n"
+	       		+ "base <http://localhost:8080/cottageService/CottageOntology#> \r\n"
+	       		+ "\r\n"
+	       		+ "\r\n"
+	       		+ "PREFIX b: <http://localhost:8080/cottageService/CottageOntology>\r\n"
+	       		+ "\r\n"
+	       		+ "\r\n"
+	       		+ "SELECT  ?name ?address ?nPlaces ?nRooms ?lake ?lakeDistance ?city ?cityDistance ?url \r\n"
+	       		+ "WHERE {   \r\n"
+	       		+ "	?item rdf:type pto:Cottage .\r\n"
+	       		+ "    ?item :hasName ?name .\r\n"
+	       		+ "    ?item :hasAddress ?address .\r\n"
+	       		+ "    ?item :hasNPlaces ?nPlaces .\r\n"
+	       		+ "    ?item :hasNRooms ?nRooms .\r\n"
+	       		+ "    ?item :hasNearestLake ?lake .\r\n"
+	       		+ "    ?item :hasLakeDistance ?lakeDistance .\r\n"
+	       		+ "    ?item :hasNearestCity  ?city .\r\n"
+	       		+ "    ?item :hasCityDistance ?cityDistance .\r\n"
+	       		+ "    ?item :hasUrl ?url .\r\n"
+	       		+ "    FILTER((xsd:string(?nRooms) >= \"" + Integer.toString(nRooms) + "\") && ((xsd:string(?nPlaces) >= \"" + Integer.toString(nPlaces) + "\")) \r\n"
+	       		+ "        && (xsd:string(?lakeDistance) <=  \"" + strLakeDistance + "\") && (xsd:integer(?cityDistance) < 100000)) .\r\n"
+	       		+ "} ";
+
+<http://localhost:8080/cottageService/CottageOntology> rdf:type owl:Ontology .
+/*
+ String queryString = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
+	       		"PREFIX e: <http://example.org/ex>\n" + 
+	       		"PREFIX b: <http://example.org/CottageOntology>\n" + 
+	       		"SELECT  ?cottageName ?cottageAddress ?hasPlaces ?hasRooms ?hasImage ?hasNearestCity \n" + 
+	       		"WHERE {  ?item rdf:type b:Cottage.\n" + 
+	       		"         ?item b:hasPlaces \""+nPlaces+"\".\n" + 
+	       		"         ?item b:hasRooms \""+nRooms+"\".\n" + 
+	       		"         ?item b:hasName ?cottageName .\n" + 
+	       		"         ?item b:hasAddress ?cottageAddress .\n" + 
+	       		"         ?item b:hasNearestCity ?hasNearestCity .\n" +
+	       		"         ?item b:hasImageURL ?hasImage .\n" + 
+	       		"}";
+	       		
+	       		*/
