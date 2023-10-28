@@ -66,16 +66,17 @@ public class Cottage extends HttpServlet {
 		String bookerName = null;
 		System.out.println("BOOKING REF "+generateBookingReference());
 		if(request.getParameter("reqType").toString().equals("doQuery")){
-			bookerName = request.getParameter("bookerName").toString();
+			bookerName = request.getParameter("bookerName").toString().toUpperCase();
 			int nPlaces = Integer.parseInt(request.getParameter("nPlaces").toString());
 			int nRooms = Integer.parseInt(request.getParameter("nRooms").toString());
 			int lakeDistance = Integer.parseInt(request.getParameter("lakeDistance").toString());
 			int cityDistance = Integer.parseInt(request.getParameter("cityDistance").toString());
+			int noOfDays = Integer.parseInt(request.getParameter("noOfDays").toString());
 			//System.out.println("Believe in yourself...");
 			//String pathToDB = this.getServletContext().getRealPath("/res/BookingDB.ttl");
 			//mediator.searchForResult(pathToDB, bookerName, noOfPlaces, noOfRooms);
 			String pathToDB = this.getServletContext().getRealPath("/res/CottageDBO.ttl");
-			mediator.searchForCottageResult(pathToDB, bookerName, nPlaces, nRooms, lakeDistance, cityDistance);
+			mediator.searchForCottageResult(pathToDB, bookerName, nPlaces, nRooms, lakeDistance, cityDistance, noOfDays);
 		}
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();

@@ -1,8 +1,30 @@
 function doQuery()
 {
 //alert('doQuery...');	
-	if((document.getElementById('bookerName').value!='')&&(document.getElementById('noOfPlaces').value!='')&&(document.getElementById('noOfRooms').value!=''))
+	if((document.getElementById('bookerName').value!='')&&(document.getElementById('noOfPlaces').value!='')&&(document.getElementById('noOfRooms').value!='')&&(document.getElementById('noOfDays').value!=''))
 	{
+		var atDate = document.getElementById('datepicker').value;
+		console.log(atDate+ "WRONG "+ atDate + "...Value ");
+		var aDate = Date.parse(atDate) || 0;
+		console.log(aDate)
+		if (aDate == 0){
+			aDate = new Date();
+			let day = aDate.getDate();
+			let month = aDate.getMonth() + 1;
+			let year = aDate.getFullYear();
+			let pickDate = `${day}.${month}.${year}`;
+			console.log(pickDate)
+		}
+		else{
+			
+			console.log(aDate == 'NaN.NaN.NaN');
+			let tDate = new Date(aDate);
+			let day = tDate.getDate();
+			let month = tDate.getMonth() + 1;
+			let year = tDate.getFullYear();
+			let pickDate = `${day}.${month}.${year}`;
+			console.log(pickDate)
+		}
 		var q_str = 'reqType=doQuery';
 
 		q_str = q_str+'&bookerName='+document.getElementById('bookerName').value;
@@ -10,6 +32,10 @@ function doQuery()
 		q_str = q_str+'&nRooms='+document.getElementById('noOfRooms').value;
 		q_str = q_str+'&lakeDistance='+document.getElementById('lakeDistance').value;
 		q_str = q_str+'&cityDistance='+document.getElementById('cityDistance').value;
+		q_str = q_str+'&noOfDays='+document.getElementById('noOfDays').value;
+		
+		
+		
 		doAjax('Cottage',q_str,'doQuery_back','post',0);
 	}else
 	{

@@ -74,14 +74,13 @@ public class SWDB {
 	
 	
 	
-	public void searchForCottageResult(String pathDB, String bookerName, int nPlaces, int nRooms, int lakeDistance, int cityDistance) {		
+	public void searchForCottageResult(String pathDB, String bookerName, int nPlaces, int nRooms, int lakeDistance, int cityDistance, int noOfDays) {		
 
 		   System.out.println("We are working on your query with the data --- "+ bookerName+"   "+nPlaces+"   "+ nRooms);
 	       Model model = RDFDataMgr.loadModel(pathDB) ;
 	       OntModelSpec ontModelSpec = OntModelSpec.OWL_DL_MEM;
 	       OntModel ontModel = ModelFactory.createOntologyModel(ontModelSpec, model);
 	      
-	       String strLakeDistance = Integer.toString(lakeDistance);
 	       
 	       String queryString = "prefix : <http://localhost:8080/cottageService/CottageOntology#> \r\n"
 	       		+ "prefix pto: <http://www.productontology.org/id/> \r\n"
