@@ -92,7 +92,7 @@ public class SWDB {
 	       		+ "base <http://localhost:8080/cottageService/CottageOntology#> \r\n"
 	       		+ "\r\n"
 	       		+ "\r\n"
-	       		+ "PREFIX b: <http://localhost:8080/cottageService/CottageOntology>\r\n"
+	       		+ "PREFIX b: <http://localhost:8080/cottageService/CottageOntology#>\r\n"
 	       		+ "\r\n"
 	       		+ "\r\n"
 	       		+ "SELECT  ?name ?address ?nPlaces ?nRooms ?lake ?lakeDistance ?city ?cityDistance ?url \r\n"
@@ -107,8 +107,7 @@ public class SWDB {
 	       		+ "    ?item :hasNearestCity  ?city .\r\n"
 	       		+ "    ?item :hasCityDistance ?cityDistance .\r\n"
 	       		+ "    ?item :hasUrl ?url .\r\n"
-	       		+ "    FILTER((xsd:string(?nRooms) >= \"" + Integer.toString(nRooms) + "\") && ((xsd:string(?nPlaces) >= \"" + Integer.toString(nPlaces) + "\")) \r\n"
-	       		+ "        && (xsd:string(?lakeDistance) <=  \"" + strLakeDistance + "\") && (xsd:integer(?cityDistance) <= 1000000)) .\r\n"
+	       		+ "    FILTER((xsd:integer(?nRooms) >= \"" + Integer.valueOf(nRooms) +"\"^^xsd:integer) && ((xsd:integer(?nPlaces) >= \"" + Integer.valueOf(nPlaces) + "\"^^xsd:integer)) && (xsd:integer(?lakeDistance) <=  \"" + Integer.valueOf(lakeDistance) + "\"^^xsd:integer) && (xsd:integer(?cityDistance) <= \"" + Integer.valueOf(cityDistance) + "\"^^xsd:integer)) .\r\n"
 	       		+ "} ";
 	       
 	      /* 
