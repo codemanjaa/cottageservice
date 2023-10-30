@@ -1,3 +1,6 @@
+var bookerName;
+
+
 function doQuery()
 {
 //alert('doQuery...');	
@@ -12,17 +15,19 @@ function doQuery()
 			let day = aDate.getDate();
 			let month = aDate.getMonth() + 1;
 			let year = aDate.getFullYear();
-			let pickDate = `${day}.${month}.${year}`;
+			var pickDate = `${day}-${month}-${year}`;
 			console.log(pickDate)
 		}
 		else{
 			
-			console.log(aDate == 'NaN.NaN.NaN');
+			//console.log(aDate.toISOString());
 			let tDate = new Date(aDate);
 			let day = tDate.getDate();
 			let month = tDate.getMonth() + 1;
 			let year = tDate.getFullYear();
-			let pickDate = `${day}.${month}.${year}`;
+			//var pickDate = `${day}-${month}-${year}`;
+			var pickDate = `${year}-${month}-${day}`;
+			
 			console.log(pickDate)
 		}
 		var q_str = 'reqType=doQuery';
@@ -33,6 +38,12 @@ function doQuery()
 		q_str = q_str+'&lakeDistance='+document.getElementById('lakeDistance').value;
 		q_str = q_str+'&cityDistance='+document.getElementById('cityDistance').value;
 		q_str = q_str+'&noOfDays='+document.getElementById('noOfDays').value;
+		q_str = q_str+'&pickDate='+pickDate;
+		q_str = q_str+'&timeStamp='+aDate;
+
+		
+		
+		bookerName = document.getElementById('bookerName').value;
 		
 		
 		
@@ -85,6 +96,7 @@ function doQuery_back(result)
 	  // Create the table element
 	  console.log(result);
          let table = document.createElement("table");
+           table.style.border = "1px solid #000";
          let div = document.createElement("div");
        //  content.innerHTML = "WELCOME TO THE RESULT "+result;
          // Get the keys (column names) of the first object in the JSON data
@@ -93,18 +105,18 @@ function doQuery_back(result)
      
      	//     document.write(obj["results"]["bindings"][0]["cottageID"]["value"] + "<br>");
         // content.innerHTML += "The following matches found for your query... <br /> "+ printValues(jsonData);
-          content.innerHTML += " <h2> Booking Reference:  "+ bookingRef +"</h2><br/>"+ "<br/><h2>The following matches found for your query... </h2><br /> "+ result;
-         /*
+          content.innerHTML += " <h2> Booker Name:"+bookerName+ " <br/>Booking Reference:  "+ bookingRef +"</h2><br/>"+ "<br/><h2>The following matches found for your query... </h2><br /> ";
+         
          // Create the header element
          let thead = document.createElement("thead");
          let tr = document.createElement("tr");
          console.log("THIS IS FROM COLS ---- "+cols[0]);
-         let val = cols[0];
+          let val = cols[0];
          console.log("What is the value of "+val);
-        */
-        /* 
+        
+        
          // Loop through the column names and create header cells
-         cols.forEach((item) => {
+         jsonData.head.vars.forEach((item) => {
             let th = document.createElement("th");
             th.innerText = item; // Set the column name as the text of the header cell
             tr.appendChild(th); // Append the header cell to the header row
@@ -113,7 +125,8 @@ function doQuery_back(result)
          table.append(tr) // Append the header to the table
          
          // Loop through the JSON data and create table rows
-         jsonData.forEach((item) => {
+         /*
+         jsonData.results.bindings.forEach((item) => {
             let tr = document.createElement("tr");
             
             // Get the values of the current object in the JSON data
@@ -126,10 +139,29 @@ function doQuery_back(result)
                tr.appendChild(td); // Append the table cell to the table row
             });
             table.appendChild(tr); // Append the table row to the table
-         });
-         */
-	//	table.append(tr);
-         //content.appendChild(table);
+         });*/
+         
+          jsonData.results.bindings.forEach(entry => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${entry.name.value}</td>
+                <td>${entry.address.value}</td>
+                <td>${entry.nPlaces.value}</td>
+                <td>${entry.nRooms.value}</td>
+                <td>${entry.lake.value}</td>
+                <td>${entry.lakeDistance.value}</td>
+                <td>${entry.city.value}</td>
+                <td>${entry.cityDistance.value}</td>
+                <td><a href="${entry.url.value}"> <img  src="${entry.url.value}" width="150" height="150">Link</a></td>
+                <td>${entry.validFrom.value}</td>
+                <td>${entry.validThrough.value}</td>
+            `;
+            table.appendChild(row);
+        });
+         
+		//table.append(tr);
+        content.appendChild(table);
+        table.style.border = "1px solid #000";
 	//alert('result:'+jsonData);
 }
 

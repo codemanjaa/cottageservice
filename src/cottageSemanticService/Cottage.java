@@ -72,11 +72,15 @@ public class Cottage extends HttpServlet {
 			int lakeDistance = Integer.parseInt(request.getParameter("lakeDistance").toString());
 			int cityDistance = Integer.parseInt(request.getParameter("cityDistance").toString());
 			int noOfDays = Integer.parseInt(request.getParameter("noOfDays").toString());
-			//System.out.println("Believe in yourself...");
+			String pickDate = request.getParameter("pickDate").toString();
+			long timeStamp = Long.parseLong(request.getParameter("timeStamp").toString());
+			String bookingId = generateBookingReference();
+			
+			System.out.println("Believe in yourself..."+pickDate+ "TIMESTAMP "+ timeStamp+ bookingId);
 			//String pathToDB = this.getServletContext().getRealPath("/res/BookingDB.ttl");
 			//mediator.searchForResult(pathToDB, bookerName, noOfPlaces, noOfRooms);
 			String pathToDB = this.getServletContext().getRealPath("/res/CottageDBO.ttl");
-			mediator.searchForCottageResult(pathToDB, bookerName, nPlaces, nRooms, lakeDistance, cityDistance, noOfDays);
+			mediator.searchForCottageResult(pathToDB, bookingId, bookerName, nPlaces, nRooms, lakeDistance, cityDistance, noOfDays, pickDate);
 		}
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();

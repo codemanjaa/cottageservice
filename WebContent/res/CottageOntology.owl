@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost:8080/codemanja/cottageService/CottageOntology/"
+     xml:base="http://localhost:8080/codemanja/cottageService/CottageOntology/"
+     xmlns:s="http://www.schema.org/"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="http://schema.org/"
+     xmlns:CottageOntology="http://localhost:8080/codemanja/cottageService/CottageOntology#">
+    <owl:Ontology rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasCity -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasCity"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasDistance -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasDistance"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasDistanceValue -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasDistanceValue"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasNearestCity -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNearestCity"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#description"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#hasBusinessFunction -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#hasBusinessFunction"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#includes -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#includes"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#legalName -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#legalName"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#name -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#name"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#offers -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#offers">
+        <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinesEntity"/>
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#BusinesEntity"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#validFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#validFrom"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#validThrough -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#validThrough"/>
+    
+
+
+    <!-- http://schema.org/addressLocality -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/addressLocality"/>
+    
+
+
+    <!-- http://schema.org/postalCode -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/postalCode"/>
+    
+
+
+    <!-- http://schema.org/streetAddress -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/streetAddress">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.schema.org/address -->
+
+    <owl:AnnotationProperty rdf:about="http://www.schema.org/address"/>
+    
+
+
+    <!-- http://www.schema.org/latitude -->
+
+    <owl:AnnotationProperty rdf:about="http://www.schema.org/latitude"/>
+    
+
+
+    <!-- http://www.schema.org/longitude -->
+
+    <owl:AnnotationProperty rdf:about="http://www.schema.org/longitude"/>
+    
+
+
+    <!-- http://www.schema.org/postalCode -->
+
+    <owl:AnnotationProperty rdf:about="http://www.schema.org/postalCode"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasAddress">
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#hasAddress"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasNearestCity -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNearestCity">
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasOffering -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasOffering"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasCity -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasCity"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasDistance -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasDistance">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasGrill -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasGrill"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasImage -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasImage">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#hasImage"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasLake -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasLake"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasLakeDistance -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasLakeDistance">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofPlace -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofPlace">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofRoom -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofRoom">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#hasNofRoom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasPrice">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#hasAddress"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasSauna -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasSauna"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#hasWifi -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#hasWifi"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#Cottage -->
+
+    <owl:Class rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#Cottage"/>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#NearestCity -->
+
+    <owl:Class rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#NearestCity"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#BusinesEntity -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#BusinesEntity"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#Location -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#Location">
+        <rdfs:comment>Note: Typical address standards (vcard) and location data (geo, WGC84) should be attached to a gr:Location node. Since there already exist established vocabularies for this, the GoodRelations ontology does not provide respective attributes. Instead, the use of respective vocabularies is recommended. However, the gr:hasGlobalLocationNumber property is provided for linking to public identifiers for business locations.
+
+Compatibility with schema.org: This class is equivalent to http://schema.org/Place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#Offering -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#Offering"/>
+    
+
+
+    <!-- http://schema.org/PostalAddress -->
+
+    <owl:Class rdf:about="http://schema.org/PostalAddress"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#Lapland -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#Lapland">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+        <gr:name>Lappi Auora</gr:name>
+        <s:address>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://schema.org/PostalAddress"/>
+                <schema:addressLocality>Lapland, Finland</schema:addressLocality>
+                <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">96300</schema:postalCode>
+                <schema:streetAddress>Kitarakuja 5</schema:streetAddress>
+            </rdf:Description>
+        </s:address>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#Laukaa -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#Laukaa">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+        <gr:name xml:lang="fi">Laukka Keskusta</gr:name>
+        <s:address>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://schema.org/PostalAddress"/>
+                <schema:addressLocality>Laukaa, Finland</schema:addressLocality>
+                <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41350</schema:postalCode>
+            </rdf:Description>
+        </s:address>
+        <s:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">62.4166667</s:latitude>
+        <s:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.95</s:longitude>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#LeaseoutOffer -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#LeaseoutOffer">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+        <gr:hasBusinessFunction rdf:resource="http://purl.org/goodrelations/v1#LeaseOut"/>
+        <gr:includes rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#SatamanRanta"/>
+        <gr:validFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-01-24T00:00:00+01:00</gr:validFrom>
+        <gr:validThrough>2023-12-29T00:00:00+01:00</gr:validThrough>
+        <foaf:page rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.lomarengas.fi/en/cottages/jyvaskyla-sataman-ranta-15201</foaf:page>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#Lomarengas -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#Lomarengas">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#BusinesEntity"/>
+        <CottageOntology:hasOffering rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#LeaseoutOffer"/>
+        <gr:legalName>Lomarengas Oy</gr:legalName>
+        <gr:offers rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#LeaseoutOffer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#SatamanRanta -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#SatamanRanta">
+        <rdf:type rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#Cottage"/>
+        <CottageOntology:hasAddress rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#SatamanRanta-12051"/>
+        <CottageOntology:hasNearestCity rdf:resource="http://localhost:8080/codemanja/cottageService/CottageOntology#Laukaa"/>
+        <CottageOntology:hasNofRoom rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10</CottageOntology:hasNofRoom>
+        <gr:description xml:lang="en-gb">In Jyväskylä, lake Jyväsjärvi 85 m, no own beach, public swimming beach 400 m.
+
+Apartment with sauna (built in 2018) in apartment house in the area of Jyväskylä port.
+Living room, living room/kitchen, bedroom with double bed, spacious walk-in closet, living room with sofa bed (120x200 cm bed), plus one foldable extra bed, sauna, washroom/WC, washing machine, parking space for one car in the house&apos;s own parking hall.</gr:description>
+        <gr:name xml:lang="en-gb">Sataman Ranta</gr:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/codemanja/cottageService/CottageOntology#SatamanRanta-12051 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/codemanja/cottageService/CottageOntology#SatamanRanta-12051">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+        <gr:name>Sataman Ranta Jyväskylä</gr:name>
+        <s:address>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://schema.org/PostalAddress"/>
+                <schema:addressLocality>Jyväskylä, Finland</schema:addressLocality>
+                <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40500</schema:postalCode>
+                <schema:streetAddress>Helvintie 2</schema:streetAddress>
+            </rdf:Description>
+        </s:address>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <schema:addressLocality>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://schema.org/PostalAddress"/>
+                <gr:name xml:lang="fi">Laukka Keskusta</gr:name>
+                <s:address>
+                    <rdf:Description>
+                        <schema:addressLocality>Laukaa, Finland</schema:addressLocality>
+                        <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41350</schema:postalCode>
+                    </rdf:Description>
+                </s:address>
+            </rdf:Description>
+        </schema:addressLocality>
+        <schema:addressLocality>Laukaa, Finland</schema:addressLocality>
+    </rdf:Description>
+    <rdf:Description>
+        <CottageOntology:hasCity>Kuopio</CottageOntology:hasCity>
+        <CottageOntology:hasDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</CottageOntology:hasDistance>
+        <CottageOntology:hasDistanceValue>meters</CottageOntology:hasDistanceValue>
+    </rdf:Description>
+    <rdf:Description>
+        <gr:name xml:lang="fi">Laukaa Keskusta</gr:name>
+        <s:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">62.4166667</s:latitude>
+    </rdf:Description>
+    <rdf:Description>
+        <gr:name>Laukaa centrum</gr:name>
+        <s:address>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://schema.org/PostalAddress"/>
+                <schema:addressLocality>Laukaa, Finland</schema:addressLocality>
+                <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41340</schema:postalCode>
+            </rdf:Description>
+        </s:address>
+        <s:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.95</s:longitude>
+        <s:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">61.4166667</s:longitude>
+    </rdf:Description>
+    <rdf:Description>
+        <schema:streetAddress>Helvintie 2</schema:streetAddress>
+    </rdf:Description>
+    <rdf:Description>
+        <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40500</schema:postalCode>
+    </rdf:Description>
+    <rdf:Description>
+        <schema:postalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41350</schema:postalCode>
+    </rdf:Description>
+    <rdf:Description>
+        <schema:addressLocality>Laukaa, Finlan</schema:addressLocality>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Location"/>
+    </rdf:Description>
+    <rdf:Description>
+        <schema:addressLocality>Laukka, Finland</schema:addressLocality>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

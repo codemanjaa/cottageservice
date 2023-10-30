@@ -23,60 +23,13 @@ public class SWDB {
 
 	private String queryResult;
 	
-	/*
-	
-	public void searchForResult(String pathDB, String p1, String p2, String p3) {		
-
-	   System.out.println("Do query...");
 		
-       Model model = RDFDataMgr.loadModel(pathDB) ;
-       OntModelSpec ontModelSpec = OntModelSpec.OWL_DL_MEM;
-       OntModel ontModel = ModelFactory.createOntologyModel(ontModelSpec, model);
+	
+	
+	
+	public void searchForCottageResult(String pathDB, String bookingId, String bookerName, int nPlaces, int nRooms, int lakeDistance, int cityDistance, int noOfDays, String pickDate) {		
 
-       String queryString = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-       		"PREFIX e: <http://example.org/ex>\n" + 
-       		"PREFIX b: <http://example.org/ItemOntology>\n" + 
-       		"SELECT ?itemId \n" + 
-       		"WHERE {  ?item rdf:type b:Item.\n" + 
-       		"         ?item b:hasParam01 \""+p1+"\".\n" + 
-       		"         ?item b:hasParam02 \""+p2+"\".\n" + 
-       		"         ?item b:hasParam03 \""+p3+"\".\n" + 
-       		"         ?item b:itemID ?itemId.\n" + 
-       		"}";
-       
-       String queryString_ = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-          		"PREFIX e: <http://example.org/ex>\n" + 
-          		"PREFIX b: <http://example.org/ItemOntology>\n" + 
-          		"SELECT ?itemId \n" + 
-          		"WHERE {  ?item rdf:type b:Item.\n" + 
-          		"         ?item b:hasParam01 \""+p1+"\".\n" + 
-          		"         ?item b:itemID ?itemId.\n" + 
-          		"}";
-       
-       Dataset dataset = DatasetFactory.create(ontModel);
-       Query q = QueryFactory.create(queryString);
-
-       QueryExecution qexec = QueryExecutionFactory.create(q, dataset);
-       ResultSet resultSet = qexec.execSelect();
-       
-       System.out.println("Results: ---");       
-       while(resultSet.hasNext()) {
-    	   QuerySolution row = (QuerySolution)resultSet.next();
-    	   RDFNode nextItemId = row.get("itemId");
-    	   System.out.print("ItemID is: "+nextItemId.toString()+".\n"); 
-    
-       }
-       System.out.println("------------");
-    	   
-	} 	
-	*/
-	
-	
-	
-	
-	public void searchForCottageResult(String pathDB, String bookerName, int nPlaces, int nRooms, int lakeDistance, int cityDistance, int noOfDays) {		
-
-		   System.out.println("We are working on your query with the data --- "+ bookerName+"   "+nPlaces+"   "+ nRooms);
+		   System.out.println("We are working on your query with the data --- "+ bookerName+"   "+nPlaces+"   "+ nRooms + bookingId);
 	       Model model = RDFDataMgr.loadModel(pathDB) ;
 	       OntModelSpec ontModelSpec = OntModelSpec.OWL_DL_MEM;
 	       OntModel ontModel = ModelFactory.createOntologyModel(ontModelSpec, model);
@@ -94,7 +47,7 @@ public class SWDB {
 	       		+ "PREFIX b: <http://localhost:8080/cottageService/CottageOntology#>\r\n"
 	       		+ "\r\n"
 	       		+ "\r\n"
-	       		+ "SELECT  ?name ?address ?nPlaces ?nRooms ?lake ?lakeDistance ?city ?cityDistance ?url \r\n"
+	       		+ "SELECT  ?name ?address ?nPlaces ?nRooms ?lake ?lakeDistance ?city ?cityDistance ?url ?validFrom ?validThrough \r\n"
 	       		+ "WHERE {   \r\n"
 	       		+ "	?item rdf:type pto:Cottage .\r\n"
 	       		+ "    ?item :hasName ?name .\r\n"
@@ -106,32 +59,14 @@ public class SWDB {
 	       		+ "    ?item :hasNearestCity  ?city .\r\n"
 	       		+ "    ?item :hasCityDistance ?cityDistance .\r\n"
 	       		+ "    ?item :hasUrl ?url .\r\n"
+	       		+ "    ?item :hasValidFrom ?validFrom .\r\n"
+	    		+ "    ?item :hasValidFrom ?validThrough .\r\n"
 	       		+ "    FILTER((xsd:integer(?nRooms) >= \"" + Integer.valueOf(nRooms) +"\"^^xsd:integer) && ((xsd:integer(?nPlaces) >= \"" + Integer.valueOf(nPlaces) + "\"^^xsd:integer)) && (xsd:integer(?lakeDistance) <=  \"" + Integer.valueOf(lakeDistance) + "\"^^xsd:integer) && (xsd:integer(?cityDistance) <= \"" + Integer.valueOf(cityDistance) + "\"^^xsd:integer)) .\r\n"
+	       		//+ "    FILTER((xsd:dateTime(?validFrom)) <= \"" + String.valueOf(pickDate) + "\"^^xsd:dateTime)   .\r\n"
+	    	       		
 	       		+ "} ";
 	       
-	      /* 
-	       String queryString = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-	       		"PREFIX e: <http://example.org/ex>\n" + 
-	       		"PREFIX b: <http://example.org/CottageOntology>\n" + 
-	       		"SELECT  ?cottageName ?cottageAddress ?hasPlaces ?hasRooms ?hasImage ?hasNearestCity \n" + 
-	       		"WHERE {  ?item rdf:type b:Cottage.\n" + 
-	       		"         ?item b:hasPlaces \""+nPlaces+"\".\n" + 
-	       		"         ?item b:hasRooms \""+nRooms+"\".\n" + 
-	       		"         ?item b:hasName ?cottageName .\n" + 
-	       		"         ?item b:hasAddress ?cottageAddress .\n" + 
-	       		"         ?item b:hasNearestCity ?hasNearestCity .\n" +
-	       		"         ?item b:hasImageURL ?hasImage .\n" + 
-	       		"}";
-	       		*/
-	       
-	     /*  String queryString_ = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" + 
-	          		"PREFIX e: <http://example.org/ex>\n" + 
-	          		"PREFIX b: <http://example.org/ItemOntology>\n" + 
-	          		"SELECT ?itemId \n" + 
-	          		"WHERE {  ?item rdf:type b:Item.\n" + 
-	          		"         ?item b:hasParam01 \""+p1+"\".\n" + 
-	          		"         ?item b:itemID ?itemId.\n" + 
-	          		"}";*/
+	   
 	       
 	       System.out.println("OUR QUERYSTRING "+queryString);
 	       
